@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Windsor Waterfront Gardens — quiet luxury by the water</title>
+  <meta name="description" content="A hidden waterfront garden off Kiambu Road. Designed for elegant weddings, intimate picnics, private events, and timeless moments surrounded by nature." />
+  <meta name="theme-color" content="#F7F4EF" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ─── Navigation ─────────────────────────────────────────── -->
+  <nav class="nav" role="navigation" aria-label="Primary">
+    <a class="nav__logo" href="#top" aria-label="Windsor Waterfront Gardens">
+      <span class="mark">WINDSOR</span>
+      <span class="sub">WATERFRONT · GARDENS</span>
+    </a>
+    <div class="nav__actions">
+      <a class="nav__inquire" href="#inquire">Inquire</a>
+      <button class="nav__menu" type="button" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ─── Drawer ─────────────────────────────────────────────── -->
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <ul class="drawer__list">
+      <li><a href="#intro"><span class="n">01</span><span>Welcome</span></a></li>
+      <li><a href="#gallery"><span class="n">02</span><span>The Grounds</span></a></li>
+      <li><a href="#experiences"><span class="n">03</span><span class="italic">Experiences</span></a></li>
+      <li><a href="#quote"><span class="n">04</span><span>A Thought</span></a></li>
+      <li><a href="#inquire"><span class="n">05</span><span>Inquire</span></a></li>
+    </ul>
+    <div class="drawer__foot">
+      <div class="info">
+        <span class="mono kicker">Call</span>
+        <span class="v">0743 945 216</span>
+      </div>
+      <div class="info">
+        <span class="mono kicker">Instagram</span>
+        <span class="v">@windsor_waterfront_gardens</span>
+      </div>
+      <div class="info">
+        <span class="mono kicker">Visit</span>
+        <span class="v">Off Kiambu Road · Nairobi</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ─── 01 · Hero (split — serif left, 9:16 reel right) ─────────────── -->
+  <header id="top" class="hero hero--split">
+    <div class="hero__bg" aria-hidden="true">
+      <div class="ph ph--reel"><div class="ph__media"></div></div>
+    </div>
+    <div class="hero__overlay" aria-hidden="true"></div>
+
+    <div class="hero__inner">
+      <div class="hero__content">
+        <h1 class="hero__title reveal">Windsor <span class="it">Waterfront</span><br />Gardens.</h1>
+        <p class="hero__sub reveal">Perfect grounds with breathtaking views<br />for unforgettable moments.</p>
+        <div class="hero__ctas reveal">
+          <a class="btn btn--ghost" href="#gallery">
+            <span>Explore the Grounds</span>
+            <span class="arrow">→</span>
+          </a>
+          <a class="btn btn--ghost" href="#inquire">
+            <span>Book an Event</span>
+            <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero__reel reveal">
+        <figure class="reel">
+          <video class="reel__video" autoplay muted loop playsinline preload="auto"
+                  poster="" aria-label="Windsor Waterfront Gardens reel">
+            <source src="windsor.mp4" type="video/mp4" />
+          </video>
+          <div class="ph__grain"></div>
+          <figcaption class="reel__tag mono">the grounds · in motion</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="hero__scroll" aria-hidden="true">
+      <span class="line"></span>
+    </div>
+  </header>
+
+  <!-- ─── 02 · Intro (variant A — centered whitespace prose) ─────────── -->
+  <section id="intro" class="section section--soft intro reveal reveal--stagger" aria-labelledby="intro-h">
+    <p class="kicker intro__kicker">— A quiet welcome</p>
+    <h2 id="intro-h" class="intro__copy serif">
+      <span class="line">Hidden off Kiambu Road,</span>
+      <span class="line">a peaceful escape designed for</span>
+      <span class="line italic">elegant celebrations and timeless moments.</span>
+    </h2>
+    <div class="intro__rule"></div>
+    <p class="intro__tag muted">Picnics. Weddings. Photoshoots.<br />Long, slow afternoons by the water.</p>
+  </section>
+
+  <!-- ─── 03 · Gallery (variant D — edge-bleed + big italic counter) ──── -->
+  <section id="gallery" class="section gallery reveal" aria-labelledby="gallery-h">
+    <div class="gallery__head">
+      <h2 id="gallery-h" class="serif">A walk through<br />the grounds.</h2>
+      <div class="meta">
+        <span>Scroll · drag · arrows</span>
+        <span class="line" style="width:42px;height:1px;background:currentColor;"></span>
+        <span class="kicker">— moments · 02</span>
+      </div>
+    </div>
+
+    <div class="gallery__stage">
+      <div class="gallery__counter" aria-hidden="true">
+        <span class="num">01</span>
+        <span class="total">/ 07 frames</span>
+      </div>
+
+      <div class="gallery__track" tabindex="0" aria-label="Gallery, scroll horizontally">
+        <figure class="gallery__card" data-caption="Sunset arches">
+          <div class="ph ph--arches">
+            <div class="ph__media"></div>
+            <img class="ph__img" src="event.jpeg" alt="Sunset arches" loading="lazy" />
+            <div class="ph__grain"></div>
+            <span class="ph__tag">sunset arches</span>
+          </div>
+        </figure>
+        <figure class="gallery__card" data-caption="Picnic on the lawn">
+          <div class="ph ph--lawn">
+            <div class="ph__media"></div>
+            <img class="ph__img" src="picnic.jpeg" alt="Picnic on the lawn" loading="lazy" />
+            <div class="ph__grain"></div>
+            <span class="ph__tag">picnic · lawn</span>
+          </div>
+        </figure>
+        <figure class="gallery__card" data-caption="Lily pond, dusk">
+          <div class="ph ph--lily">
+            <div class="ph__media"></div>
+            <img class="ph__img" src="lake.jpeg" alt="Lily pond at dusk" loading="lazy" />
+            <div class="ph__grain"></div>
+            <span class="ph__tag">lily pond · dusk</span>
+          </div>
+        </figure>
+        <figure class="gallery__card" data-caption="Waterfront table">
+          <div class="ph ph--water">
+            <div class="ph__media"></div>
+            <img class="ph__img" src="seat.jpeg" alt="Waterfront table" loading="lazy" />
+            <div class="ph__grain"></div>
+            <span class="ph__tag">waterfront table</span>
+          </div>
+        </figure>
+        <figure class="gallery__card" data-caption="Reception · candlelight">
+          <div class="ph ph--candles">
+            <div class="ph__media"></div>
+            <img class="ph__img" src="event.jpeg" alt="Reception by candlelight" loading="lazy" />
+            <div class="ph__grain"></div>
+            <span class="ph__tag">reception · candlelight</span>
+          </div>
+        </figure>
+        <figure class="gallery__card" data-caption="Pavilion at golden hour">
+          <div class="ph ph--pavilion">
+            <div class="ph__media"></div>
+            <img class="ph__img" src="seat.jpeg" alt="Pavilion at golden hour" loading="lazy" />
+            <div class="ph__grain"></div>
+            <span class="ph__tag">pavilion · golden hour</span>
+          </div>
+        </figure>
+        <figure class="gallery__card" data-caption="Morning fog over the water">
+          <div class="ph ph--fog">
+            <div class="ph__media"></div>
+            <img class="ph__img" src="lake.jpeg" alt="Morning fog over the water" loading="lazy" />
+            <div class="ph__grain"></div>
+            <span class="ph__tag">morning · fog</span>
+          </div>
+        </figure>
+      </div>
+    </div>
+
+    <div class="gallery__foot">
+      <p class="gallery__caption serif italic">“Sunset arches”</p>
+      <div class="gallery__progress" role="tablist" aria-label="Gallery progress">
+        <span class="is-active"></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <div class="gallery__nav">
+        <button type="button" class="prev" aria-label="Previous">‹</button>
+        <button type="button" class="next" aria-label="Next">›</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 04 · Experiences (variant C — index list + crossfade image) ─── -->
+  <section id="experiences" class="section exp reveal" aria-labelledby="exp-h">
+    <p class="kicker section__kicker"><span class="line"></span>— Experiences · 03</p>
+    <div class="exp__layout">
+      <div class="exp__list">
+        <h2 id="exp-h" class="serif">Ways to gather.</h2>
+        <ul class="exp__items" role="tablist">
+          <li class="exp__item is-active" role="tab">
+            <button type="button" data-idx="0">
+              <span class="n">01</span>
+              <span class="name">Weddings</span>
+              <span class="arrow">→</span>
+            </button>
+          </li>
+          <li class="exp__item" role="tab">
+            <button type="button" data-idx="1">
+              <span class="n">02</span>
+              <span class="name">Picnics</span>
+              <span class="arrow">→</span>
+            </button>
+          </li>
+          <li class="exp__item" role="tab">
+            <button type="button" data-idx="2">
+              <span class="n">03</span>
+              <span class="name">Private Events</span>
+              <span class="arrow">→</span>
+            </button>
+          </li>
+          <li class="exp__item" role="tab">
+            <button type="button" data-idx="3">
+              <span class="n">04</span>
+              <span class="name">Outdoor Celebrations</span>
+              <span class="arrow">→</span>
+            </button>
+          </li>
+          <li class="exp__item" role="tab">
+            <button type="button" data-idx="4">
+              <span class="n">05</span>
+              <span class="name">Photoshoots</span>
+              <span class="arrow">→</span>
+            </button>
+          </li>
+        </ul>
+        <p class="exp__hint">— Hover an item to preview</p>
+      </div>
+
+      <div class="exp__panel" aria-live="polite">
+        <div class="exp__slide is-active" role="tabpanel">
+          <div class="ph ph--arches"><div class="ph__media"></div><img class="ph__img" src="event.jpeg" alt="Weddings by the water" loading="lazy" /><div class="ph__grain"></div></div>
+          <div class="exp__slide__cap">
+            <h3>Weddings.</h3>
+            <div class="meta">
+              <div>01 / 05</div>
+              <div class="blurb">Ceremonies by the water — for the day you'll never want to leave.</div>
+            </div>
+          </div>
+        </div>
+        <div class="exp__slide" role="tabpanel">
+          <div class="ph ph--lawn"><div class="ph__media"></div><img class="ph__img" src="picnic.jpeg" alt="Picnics on the lawn" loading="lazy" /><div class="ph__grain"></div></div>
+          <div class="exp__slide__cap">
+            <h3>Picnics.</h3>
+            <div class="meta">
+              <div>02 / 05</div>
+              <div class="blurb">On the lawn, slowly — long tables, soft linen, and quiet light.</div>
+            </div>
+          </div>
+        </div>
+        <div class="exp__slide" role="tabpanel">
+          <div class="ph ph--candles"><div class="ph__media"></div><img class="ph__img" src="seat.jpeg" alt="Private events by candlelight" loading="lazy" /><div class="ph__grain"></div></div>
+          <div class="exp__slide__cap">
+            <h3>Private Events.</h3>
+            <div class="meta">
+              <div>03 / 05</div>
+              <div class="blurb">Intimate and considered. Anniversaries, dinners, milestones.</div>
+            </div>
+          </div>
+        </div>
+        <div class="exp__slide" role="tabpanel">
+          <div class="ph ph--pavilion"><div class="ph__media"></div><img class="ph__img" src="picnic.jpeg" alt="Outdoor celebrations" loading="lazy" /><div class="ph__grain"></div></div>
+          <div class="exp__slide__cap">
+            <h3>Outdoor Celebrations.</h3>
+            <div class="meta">
+              <div>04 / 05</div>
+              <div class="blurb">Milestones held in nature — under the trees, beneath the sky.</div>
+            </div>
+          </div>
+        </div>
+        <div class="exp__slide" role="tabpanel">
+          <div class="ph ph--fog"><div class="ph__media"></div><img class="ph__img" src="lake.jpeg" alt="Photoshoots in morning fog" loading="lazy" /><div class="ph__grain"></div></div>
+          <div class="exp__slide__cap">
+            <h3>Photoshoots.</h3>
+            <div class="meta">
+              <div>05 / 05</div>
+              <div class="blurb">Editorial light all day — morning fog to golden hour.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 05 · Quote (variant A — centered oversized italic) ──────────── -->
+  <section id="quote" class="section quote reveal reveal--stagger" aria-labelledby="quote-h">
+    <div class="quote__inner">
+      <p class="kicker">— A thought · 04</p>
+      <p class="quote__text serif" id="quote-h">
+        Where nature, elegance,<br />and unforgettable<br />moments meet.
+      </p>
+      <div class="quote__rule"></div>
+      <p class="mono quote__credit">— Windsor Waterfront Gardens</p>
+    </div>
+  </section>
+
+  <!-- ─── 06 · Inquire (variant D — editorial footer, no form) ────────── -->
+  <footer id="inquire" class="section contact reveal" aria-labelledby="contact-h">
+    <div class="contact__head">
+      <span class="left">— Inquire · 05</span>
+      <span>Est. Kiambu · 00°37′ S · 36°50′ E</span>
+    </div>
+
+    <div class="contact__hero">
+      <h2 id="contact-h" class="serif">Send us a note. <span class="it">We'll write back.</span></h2>
+    </div>
+
+    <div class="contact__grid">
+      <div class="contact__cell">
+        <span class="lbl">Call</span>
+        <a class="v" href="tel:+254743945216">0743 945 216</a>
+      </div>
+      <div class="contact__cell">
+        <span class="lbl">Direct message</span>
+        <a class="v" href="https://instagram.com/windsor_waterfront_gardens" target="_blank" rel="noopener">@windsor_waterfront_gardens</a>
+      </div>
+      <div class="contact__cell">
+        <span class="lbl">Visit</span>
+        <span class="v">Off Kiambu Road,<br />Nairobi · Kenya</span>
+      </div>
+    </div>
+
+    <div class="contact__foot">
+      <div class="mark">
+        <span class="name">WINDSOR</span>
+        <span class="sub">WATERFRONT · GARDENS</span>
+      </div>
+      <span class="copy">© Windsor Waterfront Gardens · 2026</span>
+    </div>
+  </footer>
+
+  <!-- Sticky mobile CTA -->
+  <div class="sticky-cta">
+    <a class="btn" href="#inquire">
+      <span>Book an Event</span>
+      <span class="arrow">→</span>
+    </a>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
