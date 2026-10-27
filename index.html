@@ -22,6 +22,10 @@
       <span class="sub">WATERFRONT · GARDENS</span>
     </a>
     <div class="nav__actions">
+      <button class="sound-toggle" type="button" aria-pressed="false" aria-label="Play waterfall sound">
+        <span class="sound-toggle__bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span class="sound-toggle__label">Sound</span>
+      </button>
       <a class="nav__inquire" href="#inquire">Inquire</a>
       <button class="nav__menu" type="button" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -80,12 +84,17 @@
       <div class="hero__reel reveal">
         <figure class="reel">
           <video class="reel__video" autoplay muted loop playsinline preload="auto"
-                  poster="" aria-label="Windsor Waterfront Gardens reel">
+                  poster="falls.jpg" aria-label="The waterfall at Windsor Waterfront Gardens">
             <source src="windsor.mp4" type="video/mp4" />
           </video>
           <div class="ph__grain"></div>
-          <figcaption class="reel__tag mono">the grounds · in motion</figcaption>
+          <figcaption class="reel__tag mono">the falls · golden hour</figcaption>
+          <button class="reel__sound sound-toggle" type="button" aria-pressed="false" aria-label="Play waterfall sound">
+            <span class="sound-toggle__bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+            <span class="sound-toggle__label">Hear the falls</span>
+          </button>
         </figure>
+        <audio class="ambient" src="falls.mp3" loop preload="none"></audio>
       </div>
     </div>
 
@@ -95,7 +104,7 @@
   </header>
 
   <!-- ─── 02 · Intro (variant A — centered whitespace prose) ─────────── -->
-  <section id="intro" class="section section--soft intro reveal reveal--stagger" aria-labelledby="intro-h">
+  <section id="intro" class="section section--sage intro reveal reveal--stagger" aria-labelledby="intro-h">
     <p class="kicker intro__kicker">— A quiet welcome</p>
     <h2 id="intro-h" class="intro__copy serif">
       <span class="line">Hidden off Kiambu Road,</span>
@@ -120,73 +129,57 @@
     <div class="gallery__stage">
       <div class="gallery__counter" aria-hidden="true">
         <span class="num">01</span>
-        <span class="total">/ 07 frames</span>
+        <span class="total">/ 05 frames</span>
       </div>
 
       <div class="gallery__track" tabindex="0" aria-label="Gallery, scroll horizontally">
-        <figure class="gallery__card" data-caption="Sunset arches">
-          <div class="ph ph--arches">
-            <div class="ph__media"></div>
-            <img class="ph__img" src="event.jpeg" alt="Sunset arches" loading="lazy" />
-            <div class="ph__grain"></div>
-            <span class="ph__tag">sunset arches</span>
-          </div>
-        </figure>
-        <figure class="gallery__card" data-caption="Picnic on the lawn">
-          <div class="ph ph--lawn">
-            <div class="ph__media"></div>
-            <img class="ph__img" src="picnic.jpeg" alt="Picnic on the lawn" loading="lazy" />
-            <div class="ph__grain"></div>
-            <span class="ph__tag">picnic · lawn</span>
-          </div>
-        </figure>
-        <figure class="gallery__card" data-caption="Lily pond, dusk">
-          <div class="ph ph--lily">
-            <div class="ph__media"></div>
-            <img class="ph__img" src="lake.jpeg" alt="Lily pond at dusk" loading="lazy" />
-            <div class="ph__grain"></div>
-            <span class="ph__tag">lily pond · dusk</span>
-          </div>
-        </figure>
-        <figure class="gallery__card" data-caption="Waterfront table">
-          <div class="ph ph--water">
-            <div class="ph__media"></div>
-            <img class="ph__img" src="seat.jpeg" alt="Waterfront table" loading="lazy" />
-            <div class="ph__grain"></div>
-            <span class="ph__tag">waterfront table</span>
-          </div>
-        </figure>
-        <figure class="gallery__card" data-caption="Reception · candlelight">
-          <div class="ph ph--candles">
-            <div class="ph__media"></div>
-            <img class="ph__img" src="event.jpeg" alt="Reception by candlelight" loading="lazy" />
-            <div class="ph__grain"></div>
-            <span class="ph__tag">reception · candlelight</span>
-          </div>
-        </figure>
-        <figure class="gallery__card" data-caption="Pavilion at golden hour">
+        <figure class="gallery__card" data-caption="The falls at golden hour">
           <div class="ph ph--pavilion">
             <div class="ph__media"></div>
-            <img class="ph__img" src="seat.jpeg" alt="Pavilion at golden hour" loading="lazy" />
+            <img class="ph__img" src="falls.jpg" alt="Waterfall tumbling over red rock, framed by green foliage" loading="lazy" />
             <div class="ph__grain"></div>
-            <span class="ph__tag">pavilion · golden hour</span>
+            <span class="ph__tag">the falls · golden hour</span>
           </div>
         </figure>
-        <figure class="gallery__card" data-caption="Morning fog over the water">
-          <div class="ph ph--fog">
+        <figure class="gallery__card" data-caption="Still water, big sky">
+          <div class="ph ph--water">
             <div class="ph__media"></div>
-            <img class="ph__img" src="lake.jpeg" alt="Morning fog over the water" loading="lazy" />
+            <img class="ph__img" src="lake.jpeg" alt="Calm lake reflecting clouds and a forested bank" loading="lazy" />
             <div class="ph__grain"></div>
-            <span class="ph__tag">morning · fog</span>
+            <span class="ph__tag">the lake · afternoon</span>
+          </div>
+        </figure>
+        <figure class="gallery__card" data-caption="A picnic beneath the trees">
+          <div class="ph ph--lawn">
+            <div class="ph__media"></div>
+            <img class="ph__img" src="picnic.jpeg" alt="Low picnic table with pink cushions and balloons under a tree" loading="lazy" />
+            <div class="ph__grain"></div>
+            <span class="ph__tag">picnic · under the trees</span>
+          </div>
+        </figure>
+        <figure class="gallery__card" data-caption="Lounge seating on the lawn">
+          <div class="ph ph--lily">
+            <div class="ph__media"></div>
+            <img class="ph__img" src="seat.jpeg" alt="Cushioned wooden benches arranged on the lawn" loading="lazy" />
+            <div class="ph__grain"></div>
+            <span class="ph__tag">the lawn · lounge</span>
+          </div>
+        </figure>
+        <figure class="gallery__card" data-caption="Live on the lawn">
+          <div class="ph ph--dusk">
+            <div class="ph__media"></div>
+            <img class="ph__img" src="event.jpeg" alt="Outdoor stage and lounge seating set up for a live event" loading="lazy" />
+            <div class="ph__grain"></div>
+            <span class="ph__tag">live stage · late afternoon</span>
           </div>
         </figure>
       </div>
     </div>
 
     <div class="gallery__foot">
-      <p class="gallery__caption serif italic">“Sunset arches”</p>
+      <p class="gallery__caption serif italic">“The falls at golden hour”</p>
       <div class="gallery__progress" role="tablist" aria-label="Gallery progress">
-        <span class="is-active"></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        <span class="is-active"></span><span></span><span></span><span></span><span></span>
       </div>
       <div class="gallery__nav">
         <button type="button" class="prev" aria-label="Previous">‹</button>
@@ -243,7 +236,7 @@
 
       <div class="exp__panel" aria-live="polite">
         <div class="exp__slide is-active" role="tabpanel">
-          <div class="ph ph--arches"><div class="ph__media"></div><img class="ph__img" src="event.jpeg" alt="Weddings by the water" loading="lazy" /><div class="ph__grain"></div></div>
+          <div class="ph ph--water"><div class="ph__media"></div><img class="ph__img" src="lake.jpeg" alt="The lake, a setting for waterside ceremonies" loading="lazy" /><div class="ph__grain"></div></div>
           <div class="exp__slide__cap">
             <h3>Weddings.</h3>
             <div class="meta">
@@ -253,17 +246,17 @@
           </div>
         </div>
         <div class="exp__slide" role="tabpanel">
-          <div class="ph ph--lawn"><div class="ph__media"></div><img class="ph__img" src="picnic.jpeg" alt="Picnics on the lawn" loading="lazy" /><div class="ph__grain"></div></div>
+          <div class="ph ph--lawn"><div class="ph__media"></div><img class="ph__img" src="picnic.jpeg" alt="Styled picnic with low table, cushions and balloons" loading="lazy" /><div class="ph__grain"></div></div>
           <div class="exp__slide__cap">
             <h3>Picnics.</h3>
             <div class="meta">
               <div>02 / 05</div>
-              <div class="blurb">On the lawn, slowly — long tables, soft linen, and quiet light.</div>
+              <div class="blurb">Under the trees, slowly — soft rugs, low tables, and dappled shade.</div>
             </div>
           </div>
         </div>
         <div class="exp__slide" role="tabpanel">
-          <div class="ph ph--candles"><div class="ph__media"></div><img class="ph__img" src="seat.jpeg" alt="Private events by candlelight" loading="lazy" /><div class="ph__grain"></div></div>
+          <div class="ph ph--lily"><div class="ph__media"></div><img class="ph__img" src="seat.jpeg" alt="Lounge seating arranged on the lawn for a private event" loading="lazy" /><div class="ph__grain"></div></div>
           <div class="exp__slide__cap">
             <h3>Private Events.</h3>
             <div class="meta">
@@ -273,22 +266,22 @@
           </div>
         </div>
         <div class="exp__slide" role="tabpanel">
-          <div class="ph ph--pavilion"><div class="ph__media"></div><img class="ph__img" src="picnic.jpeg" alt="Outdoor celebrations" loading="lazy" /><div class="ph__grain"></div></div>
+          <div class="ph ph--dusk"><div class="ph__media"></div><img class="ph__img" src="event.jpeg" alt="Outdoor stage and seating set up for a celebration" loading="lazy" /><div class="ph__grain"></div></div>
           <div class="exp__slide__cap">
             <h3>Outdoor Celebrations.</h3>
             <div class="meta">
               <div>04 / 05</div>
-              <div class="blurb">Milestones held in nature — under the trees, beneath the sky.</div>
+              <div class="blurb">Live music, open lawns and wide skies — room for everyone.</div>
             </div>
           </div>
         </div>
         <div class="exp__slide" role="tabpanel">
-          <div class="ph ph--fog"><div class="ph__media"></div><img class="ph__img" src="lake.jpeg" alt="Photoshoots in morning fog" loading="lazy" /><div class="ph__grain"></div></div>
+          <div class="ph ph--pavilion"><div class="ph__media"></div><img class="ph__img" src="falls.jpg" alt="The waterfall, a backdrop for photoshoots" loading="lazy" /><div class="ph__grain"></div></div>
           <div class="exp__slide__cap">
             <h3>Photoshoots.</h3>
             <div class="meta">
               <div>05 / 05</div>
-              <div class="blurb">Editorial light all day — morning fog to golden hour.</div>
+              <div class="blurb">From the falls to the lakeside — natural backdrops in golden light.</div>
             </div>
           </div>
         </div>

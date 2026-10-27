@@ -16,6 +16,9 @@
   --charcoal:    #1C1C1C;
   --charcoal-d:  rgba(28, 28, 28, 0.6);
   --charcoal-l:  rgba(28, 28, 28, 0.12);
+  --sage:        #E7EAE0;
+  --forest:      #2C3627;
+  --forest-l:    rgba(247, 244, 239, 0.16);
 
   --serif: 'Cormorant Garamond', 'Bodoni Moda', 'Didot', serif;
   --sans:  'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -405,6 +408,7 @@ section { position: relative; }
 }
 .section--ivory { background: var(--ivory); }
 .section--soft  { background: var(--soft-white); }
+.section--sage  { background: var(--sage); }
 
 .section__kicker {
   display: flex;
@@ -600,9 +604,12 @@ section { position: relative; }
 .gallery__nav button:hover { background: var(--charcoal); color: var(--ivory); }
 
 /* ── Experiences (variant C — index + crossfading image) ─────── */
+/* Deep forest ground — the one dark room in an otherwise pale house */
 .exp {
-  background: var(--soft-white);
+  background: var(--forest);
+  color: var(--ivory);
 }
+.exp .section__kicker { color: var(--champagne); }
 .exp__layout {
   display: grid;
   grid-template-columns: 1fr 1.3fr;
@@ -625,10 +632,10 @@ section { position: relative; }
   list-style: none;
   margin: 0;
   padding: 0;
-  border-top: 1px solid var(--charcoal-l);
+  border-top: 1px solid var(--forest-l);
 }
 .exp__item {
-  border-bottom: 1px solid var(--charcoal-l);
+  border-bottom: 1px solid var(--forest-l);
 }
 .exp__item button {
   appearance: none;
@@ -641,7 +648,7 @@ section { position: relative; }
   gap: 18px;
   align-items: baseline;
   text-align: left;
-  color: var(--charcoal);
+  color: var(--ivory);
   opacity: 0.5;
   cursor: pointer;
   transition: opacity var(--t-fast) var(--ease), padding var(--t-fast) var(--ease);
@@ -652,10 +659,10 @@ section { position: relative; }
   font-family: var(--mono);
   font-size: 10px;
   letter-spacing: 0.24em;
-  color: var(--charcoal-d);
+  color: rgba(247, 244, 239, 0.6);
   font-variant-numeric: tabular-nums;
 }
-.exp__item.is-active .n { color: var(--olive); }
+.exp__item.is-active .n { color: var(--champagne); }
 .exp__item .name {
   font-family: var(--serif);
   font-weight: 300;
@@ -680,7 +687,7 @@ section { position: relative; }
   font-size: 10px;
   letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: var(--charcoal-d);
+  color: rgba(247, 244, 239, 0.6);
 }
 
 .exp__panel {
@@ -735,7 +742,11 @@ section { position: relative; }
 
 /* ── Quote (variant A — centered oversized italic) ───────────── */
 .quote {
-  background: var(--ivory);
+  background:
+    linear-gradient(180deg, rgba(28,28,28,0.55) 0%, rgba(28,28,28,0.35) 50%, rgba(28,28,28,0.6) 100%),
+    url('lake.jpeg') center 60% / cover no-repeat,
+    var(--forest);
+  color: var(--ivory);
   text-align: center;
   padding-top: clamp(120px, 18vw, 240px);
   padding-bottom: clamp(120px, 18vw, 240px);
@@ -763,8 +774,9 @@ section { position: relative; }
   max-width: 18ch;
   text-wrap: balance;
 }
-.quote__rule { width: 56px; height: 1px; background: var(--charcoal); opacity: 0.7; }
-.quote__credit { color: var(--olive); }
+.quote__rule { width: 56px; height: 1px; background: var(--ivory); opacity: 0.7; }
+.quote__credit,
+.quote .kicker { color: var(--champagne); }
 
 /* ── Contact (variant D — editorial footer, no form) ─────────── */
 .contact {
@@ -862,6 +874,59 @@ section { position: relative; }
   text-transform: uppercase;
   color: var(--charcoal-d);
 }
+
+/* ── Ambient sound toggle ────────────────────────────────────── */
+.sound-toggle {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  padding: 6px 0;
+  color: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  -webkit-tap-highlight-color: transparent;
+}
+.sound-toggle__bars {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 12px;
+}
+.sound-toggle__bars i {
+  display: block;
+  width: 2px;
+  height: 3px;
+  background: currentColor;
+  transition: height var(--t-fast) var(--ease);
+}
+.sound-toggle.is-on .sound-toggle__bars i { animation: soundBar 1.1s var(--ease) infinite alternate; }
+.sound-toggle.is-on .sound-toggle__bars i:nth-child(2) { animation-delay: -0.4s; }
+.sound-toggle.is-on .sound-toggle__bars i:nth-child(3) { animation-delay: -0.8s; }
+.sound-toggle.is-on .sound-toggle__bars i:nth-child(4) { animation-delay: -0.2s; }
+@keyframes soundBar {
+  0%   { height: 3px; }
+  100% { height: 12px; }
+}
+
+.reel__sound {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 4;
+  padding: 6px 10px;
+  font-size: 8.5px;
+  color: var(--soft-white);
+  background: rgba(28, 28, 28, 0.35);
+  border: 1px solid rgba(252, 251, 248, 0.35);
+  backdrop-filter: blur(4px);
+  transition: background var(--t-fast) var(--ease);
+}
+.reel__sound:hover { background: rgba(28, 28, 28, 0.6); }
 
 /* ── Placeholders (refined gradient stand-ins for photos) ────── */
 .ph {
@@ -984,6 +1049,12 @@ section { position: relative; }
     linear-gradient(180deg, #7a6447 0%, #3e3829 50%, #1c1a14 100%);
 }
 
+/* Hero backdrop — the falls themselves, softly out of focus */
+.hero__bg .ph--reel .ph__media {
+  background: url('falls.jpg') center 55% / cover no-repeat, #3e3829;
+  filter: blur(28px) saturate(1.1);
+}
+
 /* Quote bg veil */
 .ph--reel .ph__veil {
   background: radial-gradient(ellipse at 50% 50%, transparent 30%, rgba(28,28,28,0.25) 100%);
@@ -1050,6 +1121,7 @@ section { position: relative; }
   .nav { padding: 16px 20px; }
   .nav.is-scrolled { padding-top: 12px; padding-bottom: 12px; }
   .nav__inquire { display: none; }
+  .nav .sound-toggle__label { display: none; }
   .hero__ctas { flex-direction: column; width: 100%; max-width: 320px; gap: 10px; }
   .hero__ctas .btn { width: 100%; }
   .hero { min-height: 100svh; }

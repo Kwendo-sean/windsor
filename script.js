@@ -166,6 +166,76 @@
     }
   }
 
+  /* ── Ambient waterfall sound ─────────────────────────────── */
+  // Opt-in only (browsers block autoplay audio). Routed through a
+  // GainNode so fades also work on iOS, where audio.volume is ignored;
+  // file:// previews fall back to audio.volume, since Web Audio mutes
+  // media it considers cross-origin. Softens as you scroll away.
+  const ambient = document.querySelector('.ambient');
+  const soundBtns = document.querySelectorAll('.sound-toggle');
+  if (ambient && soundBtns.length) {
+    const BASE = 0.7, FLOOR = 0.18, FADE = 1.2;
+    const useGraph = location.protocol !== 'file:' && (window.AudioContext || window.webkitAudioContext);
+    let ctx = null, gain = null, on = false, level = 0, fadeId = null;
+
+    const targetLevel = () => {
+      const hero = document.querySelector('.hero');
+      const past = Math.min(1, Math.max(0, window.scrollY / (hero.offsetHeight * 1.5)));
+      return BASE * (1 - past * (1 - FLOOR / BASE));
+    };
+    const rampTo = (v, secs) => {
+      if (gain) {
+        const t = ctx.currentTime;
+        gain.gain.cancelScheduledValues(t);
+        gain.gain.setValueAtTime(gain.gain.value, t);
+        gain.gain.linearRampToValueAtTime(v, t + secs);
+        return;
+      }
+      cancelAnimationFrame(fadeId);
+      const from = level, start = performance.now();
+      const step = (now) => {
+        const k = Math.min(1, (now - start) / (secs * 1000));
+        level = from + (v - from) * k;
+        ambient.volume = level;
+        if (k < 1) fadeId = requestAnimationFrame(step);
+      };
+      fadeId = requestAnimationFrame(step);
+    };
+    const render = () => soundBtns.forEach((b) => {
+      b.classList.toggle('is-on', on);
+      b.setAttribute('aria-pressed', String(on));
+      b.setAttribute('aria-label', on ? 'Mute waterfall sound' : 'Play waterfall sound');
+    });
+
+    const setSound = (next) => {
+      on = next;
+      render();
+      if (on) {
+        if (useGraph && !ctx) {
+          ctx = new useGraph();
+          gain = ctx.createGain();
+          gain.gain.value = 0;
+          ctx.createMediaElementSource(ambient).connect(gain).connect(ctx.destination);
+        }
+        if (ctx) ctx.resume();
+        else ambient.volume = level;
+        ambient.play().catch(() => { on = false; render(); });
+        rampTo(targetLevel(), FADE);
+      } else {
+        rampTo(0, FADE * 0.6);
+        setTimeout(() => { if (!on) ambient.pause(); }, FADE * 600);
+      }
+    };
+
+    soundBtns.forEach((b) => b.addEventListener('click', () => setSound(!on)));
+    window.addEventListener('scroll', () => { if (on) rampTo(targetLevel(), 0.3); }, { passive: true });
+    document.addEventListener('visibilitychange', () => {
+      if (!on) return;
+      if (document.hidden) ambient.pause();
+      else ambient.play().catch(() => {});
+    });
+  }
+
   /* ── Subtle parallax on hero reel ────────────────────────── */
   const heroReel = document.querySelector('.hero__reel .ph__media');
   if (heroReel) {
